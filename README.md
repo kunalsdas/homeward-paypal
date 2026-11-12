@@ -5,7 +5,7 @@ Pay with **PayPal**, delivered in seconds as **PYUSD** (PayPal USD) on Solana, w
 
 > Sandbox / devnet prototype. No real money moves.
 
-**Demo video:** _add YouTube link_ · **Live demo:** _add hosted URL_
+**Live demo:** https://homeward-whmy.onrender.com (free Render instance: the first load can take up to a minute while it wakes) · **Demo video:** _add YouTube link_
 
 ## Why
 
@@ -78,6 +78,13 @@ npm start
 
 Open http://localhost:3000. At PayPal, approve with your US **personal** sandbox account.
 
+## Deploy (Render)
+
+`render.yaml` defines one free Node web service. Create it as a Blueprint from this repo and set the secret
+environment variables in the Render dashboard: `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `OPENROUTER_API_KEY`,
+`WALLET_TREASURY` and `WALLET_FAMILY` (each wallet as the JSON array from `.wallets/<name>.json`).
+The public URL is picked up automatically from `RENDER_EXTERNAL_URL`.
+
 ## Checks
 
 ```bash
@@ -92,6 +99,7 @@ node scripts/paypal-check.mjs 10       # PayPal create → approve → capture
 - **PYUSD** (PayPal USD) on Solana devnet, Token-2022
 - **OpenRouter** free models (NVIDIA Nemotron 3.5 Super, Google Gemma 4, Baidu ERNIE 5.5) for multilingual request understanding and scam-risk checks
 - Node, Express, vanilla HTML/CSS/JS
+- **Render** for hosting (Blueprint, free web service)
 
 ## License
 
