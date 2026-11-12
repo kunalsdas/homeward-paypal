@@ -10,7 +10,8 @@ import * as store from "./lib/store.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT || 3000);
-const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+// Render sets RENDER_EXTERNAL_URL automatically; BASE_URL overrides it.
+const BASE_URL = process.env.BASE_URL || process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
 const MAX_USD = 50; // per-transfer demo limit
 
 const app = express();
@@ -115,6 +116,8 @@ app.get("/api/transfers/:id", (req, res) => {
 });
 
 app.get("/api/contacts", (_req, res) => res.json(contacts().map(({ id, name, country }) => ({ id, name, country }))));
+
+app.get("/healthz", (_req, res) => res.send("ok"));
 
 app.get("/t/:id", (_req, res) => res.sendFile(path.join(here, "public", "receipt.html")));
 

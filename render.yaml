@@ -1,0 +1,23 @@
+# Render Blueprint: one free Node web service.
+# Secrets are entered in the Render dashboard (sync: false), never stored in this repo.
+services:
+  - type: web
+    name: homeward
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: WALLET_TREASURY
+        sync: false
+      - key: WALLET_FAMILY
+        sync: false
