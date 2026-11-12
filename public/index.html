@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homeward</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="mark" href="/"><i></i>Homeward</a>
+    <span class="pill">Sandbox</span>
+  </header>
+
+  <main>
+    <!-- Compose -->
+    <section id="compose" class="stagger">
+      <p class="eyebrow">New transfer</p>
+      <h1>Send money home.</h1>
+      <p class="lede">Write it the way you'd say it, in any language.</p>
+
+      <form id="composeForm">
+        <div class="field">
+          <textarea id="text" rows="3" maxlength="500" autofocus
+            placeholder="Send ₹2,000 to Mom for her medicine"></textarea>
+        </div>
+        <div class="saved" id="saved"></div>
+        <button class="btn" id="continue" type="submit">Continue</button>
+        <p class="error" id="composeError" role="alert"></p>
+      </form>
+    </section>
+
+    <!-- Review -->
+    <section id="review" class="hide">
+      <button class="link back" id="edit" type="button">← Edit</button>
+      <p class="eyebrow">They receive</p>
+      <p class="amount" id="rAmount"></p>
+      <p class="sub" id="rTo"></p>
+
+      <dl class="rows">
+        <div class="row"><dt>You pay</dt><dd id="rUsd"></dd></div>
+        <div class="row"><dt>Rate</dt><dd id="rRate"></dd></div>
+        <div class="row"><dt>Purpose</dt><dd id="rPurpose"></dd></div>
+        <div class="row"><dt>Delivered as</dt><dd>PYUSD on Solana<small>Arrives in seconds</small></dd></div>
+        <div class="row"><dt>Network fee</dt><dd>Under $0.01<small>Covered by Homeward</small></dd></div>
+      </dl>
+      <p class="why">PYUSD settles in seconds with a public receipt, instead of days on bank rails.</p>
+
+      <div class="notice hide" id="notice">
+        <p>Before you send, a quick check</p>
+        <ul id="reasons"></ul>
+        <label><input type="checkbox" id="ack" /> I know this person and want to continue</label>
+      </div>
+
+      <button class="btn" id="pay" type="button">Pay with PayPal</button>
+      <p class="error" id="reviewError" role="alert"></p>
+      <p class="fine">Sandbox. No real money moves.</p>
+    </section>
+  </main>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

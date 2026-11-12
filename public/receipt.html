@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transfer · Homeward</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="mark" href="/"><i></i>Homeward</a>
+    <span class="pill">Sandbox</span>
+  </header>
+
+  <main class="stagger">
+    <div class="state" id="state"><span class="spinner"></span></div>
+    <p class="eyebrow" id="headline">&nbsp;</p>
+    <p class="amount" id="amount">&nbsp;</p>
+    <p class="sub" id="sub">&nbsp;</p>
+
+    <ol class="steps">
+      <li class="step" id="s1"><span class="tick"></span><span>Paid with PayPal<small id="s1d"></small></span><time id="s1t"></time></li>
+      <li class="step" id="s2"><span class="tick"></span><span>Sent as PYUSD on Solana<small id="s2d"></small></span><time id="s2t"></time></li>
+      <li class="step" id="s3"><span class="tick"></span><span>Delivered<small id="s3d"></small></span><time id="s3t"></time></li>
+    </ol>
+
+    <dl class="rows">
+      <div class="row"><dt>You paid</dt><dd id="dUsd"></dd></div>
+      <div class="row"><dt>They received</dt><dd id="dPyusd"></dd></div>
+      <div class="row"><dt>Purpose</dt><dd id="dPurpose"></dd></div>
+      <div class="row"><dt>Reference</dt><dd class="mono" id="dRef"></dd></div>
+    </dl>
+
+    <p class="center hide" id="explorerWrap"><a class="ext" id="explorer" target="_blank" rel="noopener">View public receipt on Solana ↗</a></p>
+
+    <div class="actions">
+      <button class="btn ghost" id="copy" type="button">Copy link for family</button>
+      <a class="btn" href="/">Send another</a>
+    </div>
+    <p class="fine">Sandbox. No real money moves.</p>
+  </main>
+
+  <script src="/receipt.js" type="module"></script>
+</body>
+</html>
